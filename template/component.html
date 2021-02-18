@@ -7,14 +7,18 @@
         <title>Document</title>
     </head>
     <body>
-        <!-- 这里啥也不用写，直接就能显示 template 里面的内容 -->
-        <div id="app"></div>
+        <div id="app">
+            <model1></model1>
+        </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        var isShow = new Vue({
-            el: '#app',
+        Vue.component('model1', {
             template: '<h1>HELLO WORLD</h1>', // 注意这里需要用引号括起来
+        });
+
+        new Vue({
+            el: '#app',
         });
     </script>
 </html>
