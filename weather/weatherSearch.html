@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="city" @keyup.enter="getWeather"/>
+        <!-- <input type="button" value="TEST" @click="getWeather"> -->
+        <ul>
+            <li v-for="item in forecast">
+                <div>
+                    {{ item.date}}
+                </div>
+                <div>
+                    {{ item.type}}
+                </div>
+                <div>
+                    {{ item.high}}
+                </div>
+                <div>
+                    {{ item.low}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 导入 axios -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="./main.js"></script>
+</html>

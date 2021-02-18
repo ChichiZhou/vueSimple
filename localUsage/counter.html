@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="number">
+        <button @click="deleteOne">-</button>
+        <span  v-text="currentNumber"></span>
+        <button @click="addOne">+</button>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var number = new Vue(
+        {
+           el:"#number",
+           data:{
+            currentNumber:0
+           } ,
+           methods:{
+               addOne:function(){
+                   if (this.currentNumber >= 10){
+                       alert("Reach to the upper limit")
+                   } else {
+                        this.currentNumber += 1
+                   }
+               },
+               deleteOne:function(){
+                if (this.currentNumber <= 0){
+                       alert("Reach to the lower limit")
+                   } else {
+                    this.currentNumber -=1
+                   }
+               }
+           }
+        }
+    )
+</script>
+    
+</html>
