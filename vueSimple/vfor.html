@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item, index) in arr">
+                {{item}} {{ index }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) in objArr" :title="item.name">
+                {{item.name}} {{index}}
+            </li>
+        </ul>
+        <button @click="addOneItem">Add One</button>
+        <button @click="removeOneItem">Remove One</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vfor = new Vue({
+        el:"#app",
+        data:{
+            arr:["hello", "my", "name", "is", "hezho"],
+            objArr:[
+                {name: "hezho"},
+                {name: "roushuai"}
+            ]
+        },
+        methods:{
+            addOneItem:function(){
+                this.objArr.push({name: "binzhu"})   // 向容器中加入某个元素
+            },
+            removeOneItem:function(){
+                this.objArr.shift()            // shift 默认移除最左边的元素
+            }
+        }
+    })
+</script>
+</html>

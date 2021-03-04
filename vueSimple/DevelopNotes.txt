@@ -1,0 +1,6 @@
+此文档用来练习 Vue 的基本语法
+
+创建 Vue 练习模板的方法：
+1.创建 html 文件
+2.引入 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+3.创建 一个 new Vue
